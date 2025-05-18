@@ -1,0 +1,89 @@
+$spacing: 4rem;
+$radius: 4px;
+$dotborder: 4px;
+$dot: 1rem;
+$line: .4rem;
+#career{
+    color: $gray-700;
+    .card{
+        border: none;
+        padding: 1rem 1rem;
+        position: relative;
+        h2{
+            font-size: 2rem;
+            margin-bottom: 1.6rem;
+            color: $primary;
+            text-align: center;
+        }
+        .edu-content {
+            text-align: center;
+            .timeline {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+                border-left: $line solid $primary;
+                border-bottom-right-radius: $radius;
+                border-top-right-radius: $radius;
+                position: relative;
+                padding: $spacing 0 $spacing $spacing;
+                text-align: left;
+
+                .event {
+                  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+                  padding-bottom: ($spacing * 0.5);
+                  margin-bottom: $spacing;
+                  position: relative;
+                  .event-headline{
+                    .event-title {
+                        letter-spacing: 1.5px;
+                        font-size: 1.4em;
+                    }
+                    .event-sub-title{
+                        font-size: 1rem;
+                        letter-spacing: 0.5px;
+                        margin: 0;
+                    }
+                    .event-when{
+                        color: $gray-600;
+                    }
+                  }
+                  .event-body{
+                      p{
+                        font-size: 1.1rem;
+                        margin-bottom: .2rem;
+                        span{
+                            color: $primary;
+                            font-weight: 600;
+                        }
+                        a{
+                            color: $gray-700;
+                            text-decoration: underline;
+                        }
+                      }
+                  }
+
+                  &:last-of-type {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                  }
+
+                  &:before, &:after {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                  }
+
+                  &:after {
+                    box-shadow: 0 0 0 $dotborder $primary;
+                    left: ($spacing + $line + ($dot * 0.35)) * -1;
+                    background: lighten($primary,5%);
+                    border-radius: 50%;
+                    height: $dot;
+                    width: $dot;
+                    content: "";
+                    top: 5px;
+                  }
+                }
+            }
+        }
+    }
+}

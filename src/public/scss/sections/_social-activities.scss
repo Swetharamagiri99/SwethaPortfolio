@@ -1,0 +1,264 @@
+#social-activities{
+    $offset: 50px;
+    .solcial-activites-wrapper{
+        .organizations-wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .outer{
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                .static{
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                }
+                .dynmaic-container{
+                    margin: 3rem 0;
+                    height: 100%;
+                    perspective: 500px;
+                    position: relative;
+                    perspective-origin: 50% 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    .inner{
+                        transform: translateZ(-$offset);
+                        transform-style: preserve-3d;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .activity-dynamic-item{
+                            color: $primary;
+                            position: absolute;
+                            animation-duration: 2.5s;
+                            animation-fill-mode: backwards;
+                            animation-timing-function: ease;
+                            z-index: 100;
+                            backface-visibility: hidden;
+                            font-size: 3rem;
+                            font-weight: 600;
+                            white-space: nowrap;
+                            visibility: hidden;
+                            border-bottom: 2px solid $primary;
+                            border-top: 2px solid $primary;
+                            transform-style: preserve-3d;
+                        }
+                        .animate{
+                            visibility: visible;
+                            animation-name: animate;
+                        }
+                        @keyframes animate{
+                            0%{
+                                transform: rotateX(-90deg)translateZ($offset);
+                            }
+                            6%{transform: rotateX(10deg)translateZ($offset);}
+                            12%{transform: rotateX(-5deg)translateZ($offset);}
+                            18%{transform: rotateX(1.5deg)translateZ($offset);}
+                            24%{transform: rotateX(0deg)translateZ($offset);}
+
+
+                            82%{transform: rotateX(0deg)translateZ($offset);}
+                            88%{transform: rotateX(5deg)translateZ($offset);}
+                            94%{transform: rotateX(-10deg)translateZ($offset);}
+                            100%{
+                                transform: rotateX(90deg)translateZ($offset);
+                            }
+                        }
+                    }
+                }
+            }
+            .organization-logos{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 4.5rem;
+                img{
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    // border: 5px solid $primary;
+                    margin-right: 1rem;
+                }
+            }
+        }
+        .social-pics-wrapper{
+            .carousel {
+                position: relative;
+
+                .carousel-inner{
+                    .carousel-item{
+                        position: relative;
+                        img{
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        .activity-text{
+                            width: 100%;
+                            position: absolute;
+                            bottom: 5rem;
+                            text-align: center;
+                            padding: .5rem 2rem;
+                            color: $white;
+                            background: rgba($color: $black, $alpha: .4);
+                            p{
+                                margin: 0;
+
+                            }
+                        }
+                    }
+                }
+              }
+
+            #carousel-thumbs {
+                background: rgba(255,255,255,.3);
+                bottom: 0;
+                left: 0;
+                padding: 0 4.2rem;
+                right: 0;
+                img {
+                    border: 5px solid transparent;
+                    cursor: pointer;
+                    &:hover{
+                        border-color: rgba(255,255,255,.3);
+                    }
+                }
+                .selected{
+                    img {
+                        border-color: $white;
+                    }
+                }
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 50px;
+            }
+            @media all and (max-width: 767px) {
+                .carousel-container {
+                    #carousel-thumbs{
+                        img {
+                            border-width: 3px;
+                        }
+                    }
+                }
+            }
+            @media all and (min-width: 576px) {
+            .carousel-container #carousel-thumbs {
+                position: absolute;
+            }
+            }
+            @media all and (max-width: 576px) {
+                .carousel-container #carousel-thumbs {
+                    background: #ccccce;
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:998px){
+    #social-activities{
+        $offset: 50px;
+        .solcial-activites-wrapper{
+            .organizations-wrapper{
+                .outer{
+                    .static{
+                        font-size: 1.4rem;
+                    }
+                    .dynmaic-container{
+                        margin: 1.5rem 0 2.5rem;
+                        .inner{
+                            .activity-dynamic-item{
+                                font-size: 2.5rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .organization-logos{
+                    margin-top: 2.5rem;
+                    img{
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:778px){
+    #social-activities{
+        $offset: 50px;
+        .solcial-activites-wrapper{
+            .organizations-wrapper{
+                .outer{
+                    .static{
+                        font-size: 1.8rem;
+                    }
+                    .dynmaic-container{
+                        margin: 1.5rem 0 2.5rem;
+                        .inner{
+                            .activity-dynamic-item{
+                                font-size: 3rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .organization-logos{
+                    margin-top: 2.5rem;
+                    margin-bottom: 4rem;
+                    img{
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:578px){
+    #social-activities{
+        $offset: 50px;
+        .solcial-activites-wrapper{
+            .organizations-wrapper{
+                .outer{
+                    .static{
+                        font-size: 1.5rem;
+                    }
+                    .dynmaic-container{
+                        margin: 1.5rem 0 2.5rem;
+                        .inner{
+                            .activity-dynamic-item{
+                                font-size: 2.5rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .organization-logos{
+                    margin-top: 2.5rem;
+                    margin-bottom: 4rem;
+                    img{
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+            .social-pics-wrapper{
+                padding: 0 3rem;
+            }
+        }
+    }
+}

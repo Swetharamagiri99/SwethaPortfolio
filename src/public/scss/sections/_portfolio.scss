@@ -1,0 +1,237 @@
+#portfolio{
+    .projects-wrapper{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        .card {
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px #ccc;
+            width: 100%;
+            overflow: hidden;
+            .card-header {
+                position: relative;
+                width: 100%;
+                height: 320px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                &:hover{
+                    cursor: pointer;
+                    animation-duration: 11s;
+                    animation-name: autoscroll;
+                    animation-timing-function: ease-out;
+                }
+            }
+            .card-bottom {
+                background-color: $primary;
+                border-radius: 0 0px .5rem .5rem;
+                color: white;
+                width: 100%;
+                .read-more{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: .5rem 0;
+                    p{
+                        margin: 0;
+                        font-size: 1.3rem;
+                    }
+                    i {
+                        font-size: 1.3rem;
+                        animation: up 1s infinite;
+                    }
+                }
+                .card-body {
+                    position: absolute;
+                    bottom: 0;
+                    height: 300px;
+                    width: 100%;
+                    transition: all 1s;
+                    top: 100%;
+                    border-radius: .5rem;
+                    margin-top:100px;
+                    display: flex;
+                    background-color: $primary;
+                    .card-body-box{
+                        width: 100%;
+                        height: 100%;
+                        padding: 2rem 1rem;
+                        background-color: white;
+                        color: $black;
+                        border-radius: .5rem;
+                        .card-body-title{
+                            font-size: 1.9rem;
+                            margin-bottom: .7rem;
+                            color: $primary;
+                        }
+                        .card-body-desc{
+                            font-size: 1.1rem;
+                            color: $gray-700;
+                            a{
+                                color: $gray-700;
+                                text-decoration: underline;
+                            }
+                        }
+                        .card-body-keys{
+                            font-size: .95rem;
+                            color: $gray-600;
+                            i{
+                                margin-right: .3rem;
+                                color: $primary;
+                            }
+                        }
+                        .card-body-action{
+                            display: flex;
+                            justify-content: center;
+                            .btn{
+                                padding: .4rem .7rem;
+                                font-size: 1.1rem;
+                                font-weight: 700;
+                                margin-right: .5rem;
+                                &:last-child{
+                                    margin-right: none;
+                                }
+                                i{
+                                    font-size: 1.1rem;
+                                    margin-right: .3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover .card-body {
+                    margin-top: 0;
+                    top: 20%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1324px){
+    #portfolio{
+        .projects-wrapper{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: 998px){
+    #portfolio{
+        .projects-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: 778px){
+    #portfolio{
+        .projects-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            .card{
+                .card-bottom {
+                    .read-more{
+                        p{
+                            font-size: 1.15rem;
+                        }
+                        i {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 528px){
+    #portfolio{
+        .projects-wrapper{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+    }
+}
+
+
+@keyframes autoscroll {
+    0% {
+      background-position: 50% 0;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 50% 0%;
+    }
+}
+
+@keyframes up {
+    0% {
+       transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-.2rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#portfolio{
+    .projects-wrapper{
+        /// All the projects
+        #project1{
+            background-image: url('./../assets/img/portfolio/oxbridge.png');
+        }
+        #project2{
+            background-image: url('./../assets/img/portfolio/agency.png');
+        }
+        #project3{
+            background-image: url('./../assets/img/portfolio/grid-flex-template.png');
+        }
+
+        #project4{
+            background-image: url('./../assets/img/portfolio/cv-template.png');
+        }
+
+        #project5{
+            background-image: url('./../assets/img/portfolio/landing-page.png');
+            &:hover{
+                animation-duration: 1s;
+            }
+        }
+        #project6{
+            background-image: url('./../assets/img/portfolio/my-first-portfolio.png');
+            &:hover{
+                animation-duration: 4s;
+            }
+        }
+        #project7{
+            background-image: url('./../assets/img/portfolio/storeTemplate.png');
+            &:hover{
+                animation-duration: 8s;
+            }
+        }
+        #project8{
+            background-image: url('./../assets/img/portfolio/dz-inventors.png');
+        }
+        #project9{
+            background-image: url('./../assets/img/portfolio/avos-offres.png');
+            &:hover{
+                animation-duration: 8s;
+            }
+        }
+    }
+}
+

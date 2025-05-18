@@ -1,0 +1,22 @@
+// Import variables
+@import "./variables.scss";
+
+// Global CSS
+@import "./global.scss";
+
+// Components
+@import "./components/buttons.scss";
+@import "./components/navbar.scss";
+
+// Sections
+@import "./sections/masthead.scss";
+@import "./sections/about.scss";
+@import "./sections/career.scss";
+@import "./sections/skills.scss";
+@import "./sections/learn.scss";
+@import "./sections/certificates.scss";
+@import "./sections/portfolio.scss";
+@import "./sections/pens.scss";
+@import "./sections/social-activities.scss";
+@import "./sections/contact.scss";
+@import "./sections/footer.scss";
